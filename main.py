@@ -243,18 +243,18 @@ def main():
 
     # Input field for the question
     with right_column:
-        st.title("FE DEV GUIDELINES - Ask me questions...")
-        question = st.text_input(f"Enter question: ")
-        if st.button("Get Answer") or question:
+        st.title("Generate code - paste your code here...")
+        question = st.text_input(f"Paste code: ")
+        if st.button("generate code") or question:
             # Check if a question is provided
             if not question:
-                st.warning("Please enter a question.")
+                st.warning("Please insert your code.")
             else:
              while True:
               try:
-               st.write(f"**Question:** {question}")     
+               st.write(f"**Code:** {question}")     
                ask_and_get_answer_v3(question, st.session_state.chat_history)
-               break  
+               break   
               except Exception as e:
                print(f"An error occurred: {str(e)}")
 
